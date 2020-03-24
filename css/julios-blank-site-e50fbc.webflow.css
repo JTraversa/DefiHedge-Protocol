@@ -1,0 +1,766 @@
+.w-layout-grid {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-columns: 1fr;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+}
+
+body {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  color: #333;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.container {
+  height: 1222px;
+  border: 0px solid #000;
+}
+
+.columns {
+  float: none;
+}
+
+.createcolumn {
+  height: 525px;
+  margin-top: 133px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #6a686d;
+  border-radius: 20px;
+  background-color: #28292e;
+}
+
+.offercolumn {
+  height: 380px;
+  margin-top: 200px;
+}
+
+.column-3 {
+  height: 525px;
+  margin-top: 133px;
+  background-color: #28292e;
+}
+
+.offerdiv {
+  height: 340px;
+  margin-top: 22px;
+  margin-right: -6px;
+  margin-left: -6px;
+  border: 5px solid #6a686d;
+  border-radius: 20px;
+  background-color: #28292e;
+}
+
+.body {
+  background-image: url('../images/background.png');
+  background-position: 0px 0px;
+  background-size: 125px;
+}
+
+.ercbutton {
+  width: 110px;
+  height: 70px;
+  min-width: 50px;
+  margin-top: 35px;
+  margin-left: 25px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #353535;
+  border-radius: 20px;
+  background-color: #232f44;
+  box-shadow: 1px 1px 9px 4px #000;
+  -webkit-transform: skew(0deg, 0deg);
+  -ms-transform: skew(0deg, 0deg);
+  transform: skew(0deg, 0deg);
+  -webkit-transition: flex-grow 450ms ease-in-out, -webkit-box-flex 450ms ease-in-out, -webkit-flex-grow 450ms ease-in-out;
+  transition: flex-grow 450ms ease-in-out, -webkit-box-flex 450ms ease-in-out, -webkit-flex-grow 450ms ease-in-out;
+  transition: flex-grow 450ms ease-in-out;
+  transition: flex-grow 450ms ease-in-out, -webkit-box-flex 450ms ease-in-out, -webkit-flex-grow 450ms ease-in-out, -ms-flex-positive 450ms ease-in-out;
+  direction: ltr;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  text-transform: none;
+  white-space: normal;
+}
+
+.section {
+  display: block;
+  overflow: visible;
+  float: none;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+}
+
+.ratetext {
+  width: 200px;
+  margin-top: 29px;
+  margin-left: 19px;
+  -webkit-transform: translate(0px, 20px);
+  -ms-transform: translate(0px, 20px);
+  transform: translate(0px, 20px);
+  color: #7c7c7c;
+  font-size: 26px;
+}
+
+.rate-field {
+  width: 120px;
+  margin-top: -150px;
+  margin-left: 162px;
+}
+
+.fd {
+  width: 120px;
+  margin-left: 162px;
+}
+
+.token-field {
+  width: 120px;
+  margin-left: 162px;
+}
+
+.supplied-field {
+  width: 120px;
+  margin-left: 162px;
+}
+
+.createofferbutton {
+  width: 180px;
+  height: 80px;
+  margin-top: 0px;
+  margin-left: 0px;
+  padding-top: 27px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #286f35;
+  border-radius: 11px;
+  background-color: #141414;
+  box-shadow: 4px 4px 20px 0 #000;
+  -webkit-transform: translate(55px, 60px);
+  -ms-transform: translate(55px, 60px);
+  transform: translate(55px, 60px);
+  -webkit-transition: opacity 200ms ease, opacity 200ms ease;
+  transition: opacity 200ms ease, opacity 200ms ease;
+  font-size: 25px;
+  text-align: center;
+  white-space: normal;
+}
+
+.takecolumn {
+  height: 525px;
+  margin-top: 133px;
+  padding-right: 10px;
+  border: 5px solid #6a686d;
+  border-radius: 20px;
+  background-color: #28292e;
+}
+
+.grid {
+  width: 290px;
+  height: 300px;
+  margin-top: 15px;
+  margin-left: 6px;
+  grid-column-gap: 12px;
+  grid-row-gap: 5px;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  -ms-grid-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
+  border: 0px solid #000;
+  border-radius: 8px;
+  background-color: #474747;
+}
+
+.activelabel {
+  height: 5px;
+  margin-left: 13px;
+  padding-bottom: 6px;
+  border: 0px solid #000;
+  border-radius: 0px;
+  -webkit-transform: translate(0px, 5px);
+  -ms-transform: translate(0px, 5px);
+  transform: translate(0px, 5px);
+  color: #e7e7e7;
+  font-size: 12px;
+}
+.error-message {
+  margin-left: auto;
+  background-color: #ffe7de;
+}
+
+.useraddress {
+  width: 250px;
+  margin-right: 76px;
+  padding-top: 8px;
+  float: right;
+  clear: none;
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #e7e7e7;
+  font-size: 12px;
+  text-align: left;
+  text-indent: 20px;
+}
+
+.selectedoffer {
+  margin-top: 25px;
+  padding-top: 10px;
+  padding-left: 6px;
+  color: #e7e7e7;
+  font-size: 12px;
+  text-align: left
+}
+
+.div-block-2 {
+  width: 120px;
+  height: 35px;
+  min-width: 120px;
+  float: none;
+  clear: none;
+  background-color: #fff;
+  -webkit-transform: translate(171px, 0px);
+  -ms-transform: translate(171px, 0px);
+  transform: translate(171px, 0px);
+}
+
+.div-block-3 {
+  width: 120px;
+  height: 35px;
+  background-color: #fff8f8;
+  -webkit-transform: translate(171px, -85px);
+  -ms-transform: translate(171px, -85px);
+  transform: translate(171px, -85px);
+}
+
+.div-block-3-copy {
+  width: 120px;
+  height: 35px;
+  background-color: #fff8f8;
+  -webkit-transform: translate(171px, -170px);
+  -ms-transform: translate(171px, -170px);
+  transform: translate(171px, -170px);
+}
+
+.div-block-3-copy-copy {
+  width: 120px;
+  height: 35px;
+  background-color: #fff8f8;
+  -webkit-transform: translate(171px, -300px);
+  -ms-transform: translate(171px, -300px);
+  transform: translate(171px, -300px);
+}
+
+.div-block-3-copy-copy-copy {
+  width: 120px;
+  height: 35px;
+  background-color: #fff8f8;
+  -webkit-transform: translate(171px, -288px);
+  -ms-transform: translate(171px, -288px);
+  transform: translate(171px, -288px);
+}
+
+.stakelabel {
+  width: 120px;
+  height: 35px;
+  background-color: #fff;
+  -webkit-transform: translate(171px, 0px);
+  -ms-transform: translate(171px, 0px);
+  transform: translate(171px, 0px);
+}
+
+.ratelabel {
+  width: 120px;
+  height: 35px;
+  background-color: #fff;
+  -webkit-transform: translate(171px, -233px);
+  -ms-transform: translate(171px, -233px);
+  transform: translate(171px, -233px);
+}
+
+.durationlabel {
+  width: 120px;
+  height: 35px;
+  background-color: #fff;
+  -webkit-transform: translate(171px, -219px);
+  -ms-transform: translate(171px, -219px);
+  transform: translate(171px, -219px);
+}
+
+.tokenlabel {
+  width: 120px;
+  height: 35px;
+  background-color: #fff;
+  -webkit-transform: translate(171px, -205px);
+  -ms-transform: translate(171px, -205px);
+  transform: translate(171px, -205px);
+}
+
+.suppliedlabel {
+  width: 120px;
+  height: 35px;
+  background-color: #fff;
+  -webkit-transform: translate(171px, -190px);
+  -ms-transform: translate(171px, -190px);
+  transform: translate(171px, -190px);
+}
+
+.authorizebutton1 {
+  width: 140px;
+  border-radius: 20px;
+  background-color: #585858;
+  box-shadow: 1px 0 12px 0 #000;
+  -webkit-transform: translate(10px, -88px);
+  -ms-transform: translate(10px, -88px);
+  transform: translate(10px, -88px);
+  text-align: center;
+}
+
+.durationtext2 {
+  width: 200px;
+  margin-top: 29px;
+  margin-left: 19px;
+  -webkit-transform: translate(0px, 30px);
+  -ms-transform: translate(0px, 30px);
+  transform: translate(0px, 30px);
+  color: #7c7c7c;
+  font-size: 26px;
+}
+
+.tokentext2 {
+  width: 200px;
+  margin-top: 29px;
+  margin-left: 19px;
+  -webkit-transform: translate(0px, 30px);
+  -ms-transform: translate(0px, 30px);
+  transform: translate(0px, 30px);
+  color: #7c7c7c;
+  font-size: 26px;
+}
+
+.suppliedtext2 {
+  width: 200px;
+  margin-top: 29px;
+  margin-left: 19px;
+  -webkit-transform: translate(0px, 30px);
+  -ms-transform: translate(0px, 30px);
+  transform: translate(0px, 30px);
+  color: #7c7c7c;
+  font-size: 26px;
+}
+
+.takertext {
+  width: 200px;
+  margin-top: 29px;
+  margin-left: 19px;
+  -webkit-transform: translate(0px, 30px);
+  -ms-transform: translate(0px, 30px);
+  transform: translate(0px, 30px);
+  color: #7c7c7c;
+  font-size: 26px;
+}
+
+.takeofferbutton {
+  width: 180px;
+  height: 80px;
+  margin-bottom: -29px;
+  padding-top: 27px;
+  border: 3px solid #286f35;
+  border-radius: 11px;
+  background-color: #141414;
+  box-shadow: 4px 4px 20px 0 #000;
+  -webkit-transform: translate(57px, -95px);
+  -ms-transform: translate(57px, -95px);
+  transform: translate(57px, -95px);
+  font-size: 25px;
+  text-align: center;
+}
+
+.durationtext {
+  width: 200px;
+  margin-top: 29px;
+  margin-left: 19px;
+  -webkit-transform: translate(0px, 15px);
+  -ms-transform: translate(0px, 15px);
+  transform: translate(0px, 15px);
+  color: #7c7c7c;
+  font-size: 26px;
+}
+
+.tokentext {
+  width: 200px;
+  margin-top: 29px;
+  margin-left: 19px;
+  -webkit-transform: translate(0px, 15px);
+  -ms-transform: translate(0px, 15px);
+  transform: translate(0px, 15px);
+  color: #7c7c7c;
+  font-size: 26px;
+}
+
+.suppliedtext {
+  width: 200px;
+  margin-top: 29px;
+  margin-left: 19px;
+  -webkit-transform: translate(0px, 15px);
+  -ms-transform: translate(0px, 15px);
+  transform: translate(0px, 15px);
+  color: #7c7c7c;
+  font-size: 26px;
+}
+
+.ratetext2 {
+  width: 200px;
+  margin-top: 29px;
+  margin-left: 19px;
+  -webkit-transform: translate(0px, 30px);
+  -ms-transform: translate(0px, 30px);
+  transform: translate(0px, 30px);
+  color: #7c7c7c;
+  font-size: 26px;
+}
+
+.text-field {
+  width: 120px;
+  -webkit-transform: translate(162px, 0px);
+  -ms-transform: translate(162px, 0px);
+  transform: translate(162px, 0px);
+}
+
+.bannerblock {
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 6px;
+  background-color: #232f44;
+  box-shadow: 1px 1px 5px 13px #000;
+}
+
+.offer2 {
+  height: 5px;
+  margin-left: 13px;
+  border: 0px solid #000;
+  border-radius: 0px;
+  color: #e7e7e7;
+}
+
+.offer3 {
+  height: 5px;
+  margin-left: 13px;
+  border: 0px solid #000;
+  border-radius: 0px;
+  color: #e7e7e7;
+}
+
+.activecontracts {
+  width: 800px;
+  height: 150px;
+  border: 3px solid #6a686d;
+  border-radius: 20px;
+  background-color: #28292e;
+  -webkit-transform: translate(71px, 10px);
+  -ms-transform: translate(71px, 10px);
+  transform: translate(71px, 10px);
+}
+
+.offer1 {
+  height: 5px;
+  margin-top: -3px;
+  margin-left: 10px;
+  padding-top: 3px;
+  border: 0px solid #000;
+  border-radius: 0px;
+  color: #e7e7e7;
+  font-size: 12px;
+}
+
+.offer4 {
+  height: 5px;
+  margin-left: 13px;
+  border: 0px solid #000;
+  border-radius: 0px;
+  color: #e7e7e7;
+}
+
+.contractslabel {
+  -webkit-transform: translate(15px, 0px);
+  -ms-transform: translate(15px, 0px);
+  transform: translate(15px, 0px);
+  color: #fff;
+}
+
+.contract1 {
+  width: 200px;
+  -webkit-transform: translate(15px, 0px);
+  -ms-transform: translate(15px, 0px);
+  transform: translate(15px, 0px);
+  color: #fff;
+}
+
+.contractsize1 {
+  width: 125px;
+  -webkit-transform: translate(290px, -20px);
+  -ms-transform: translate(290px, -20px);
+  transform: translate(290px, -20px);
+  color: #fff;
+  text-align: right;
+}
+
+.contractrate1 {
+  width: 100px;
+  float: right;
+  -webkit-transform: translate(-70px, -40px);
+  -ms-transform: translate(-70px, -40px);
+  transform: translate(-70px, -40px);
+  color: #fff;
+  text-align: left;
+}
+
+.authorizebutton2 {
+  width: 140px;
+  border-radius: 20px;
+  background-color: #585858;
+  box-shadow: 1px 0 12px 0 #000;
+  -webkit-transform: translate(10px, -124px);
+  -ms-transform: translate(10px, -124px);
+  transform: translate(10px, -124px);
+  text-align: center;
+}
+
+.form {
+  -webkit-transform: translate(0px, -10px);
+  -ms-transform: translate(0px, -10px);
+  transform: translate(0px, -10px);
+}
+
+.contractrate {
+  margin-left: 6px;
+  padding-top: 8px;
+}
+
+.txstatus {
+  width: 450px;
+  color: #fff;
+  text-align: left;
+  font-size: 12px;
+}
+
+.text-block {
+  width: 450px;
+  color: #fff;
+  text-align: right;
+}
+
+.txstatus1 {
+  width: 450px;
+  -webkit-transform: translate(15px, 10px);
+  -ms-transform: translate(15px, 10px);
+  transform: translate(15px, 10px);
+  color: #fff;
+  text-align: left;
+  font-size: 12px;
+}
+.div-block-4 {
+  width: 290px;
+  height: 40px;
+  margin-top: -16px;
+  margin-bottom: -13px;
+  border: 0px dashed #000;
+  border-radius: 8px;
+  background-color: #232f44;
+  box-shadow: 1px 1px 11px 0 #000;
+}
+
+.releasebutton1 {
+  width: 60px;
+  height: 20px;
+  padding: 0px 5px;
+  float: right;
+  border-radius: 15px;
+  background-color: #232f44;
+  box-shadow: 1px 1px 6px 0 #000;
+  -webkit-transform: translate(86px, -40px);
+  -ms-transform: translate(86px, -40px);
+  transform: translate(86px, -40px);
+  text-align: left;
+}
+
+.releasebutton2 {
+  width: 60px;
+  height: 20px;
+  padding: 0px 5px;
+  float: right;
+  border-radius: 15px;
+  background-color: #232f44;
+  box-shadow: 1px 1px 6px 0 #000;
+  -webkit-transform: translate(146px, -10px);
+  -ms-transform: translate(146px, -10px);
+  transform: translate(146px, -10px);
+  text-align: left;
+}
+
+.releasebutton2-copy {
+  width: 60px;
+  height: 20px;
+  padding: 0px 5px;
+  float: right;
+  border-radius: 15px;
+  background-color: #232f44;
+  box-shadow: 1px 1px 6px 0 #000;
+  -webkit-transform: translate(206px, 19px);
+  -ms-transform: translate(206px, 19px);
+  transform: translate(206px, 19px);
+  text-align: left;
+}
+
+.contract1-copy {
+  width: 200px;
+  -webkit-transform: translate(15px, 0px);
+  -ms-transform: translate(15px, 0px);
+  transform: translate(15px, 0px);
+  color: #fff;
+}
+
+.contract2 {
+  width: 200px;
+  -webkit-transform: translate(15px, -10px);
+  -ms-transform: translate(15px, -10px);
+  transform: translate(15px, -10px);
+  color: #fff;
+}
+
+.contractsize2 {
+  width: 125px;
+  -webkit-transform: translate(290px, -30px);
+  -ms-transform: translate(290px, -30px);
+  transform: translate(290px, -30px);
+  color: #fff;
+  text-align: right;
+}
+
+.contractrate2 {
+  width: 100px;
+  float: right;
+  -webkit-transform: translate(-70px, -50px);
+  -ms-transform: translate(-70px, -50px);
+  transform: translate(-70px, -50px);
+  color: #fff;
+  text-align: left;
+}
+
+.contract3 {
+  width: 200px;
+  -webkit-transform: translate(15px, -20px);
+  -ms-transform: translate(15px, -20px);
+  transform: translate(15px, -20px);
+  color: #fff;
+}
+
+.contractsize3 {
+  width: 125px;
+  -webkit-transform: translate(290px, -40px);
+  -ms-transform: translate(290px, -40px);
+  transform: translate(290px, -40px);
+  color: #fff;
+  text-align: right;
+}
+
+.contractrate3 {
+  width: 100px;
+  float: right;
+  -webkit-transform: translate(-70px, -60px);
+  -ms-transform: translate(-70px, -60px);
+  transform: translate(-70px, -60px);
+  color: #fff;
+  text-align: left;
+}
+
+.contractduration {
+  margin-left: 6px;
+  padding-top: 8px;
+}
+
+.contractaddress {
+  margin-left: 6px;
+  padding-top: 8px;
+}
+
+.contractsupplied {
+  margin-left: 6px;
+  padding-top: 8px;
+}
+
+.contractstake {
+  margin-left: 6px;
+  padding-top: 8px;
+}
+
+.contractexpire1 {
+  width: 150px;
+  float: right;
+  -webkit-transform: translate(-100px, -120px);
+  -ms-transform: translate(-100px, -120px);
+  transform: translate(-100px, -120px);
+  color: #fff;
+  text-align: left;
+}
+
+
+.contractexpire2 {
+  width: 150px;
+  float: right;
+  -webkit-transform: translate(49px, -90px);
+  -ms-transform: translate(49px, -90px);
+  transform: translate(49px, -90px);
+  color: #fff;
+  text-align: left;
+}
+
+.contractexpire3 {
+  width: 150px;
+  float: right;
+  -webkit-transform: translate(200px, -60px);
+  -ms-transform: translate(200px, -60px);
+  transform: translate(200px, -60px);
+  color: #fff;
+  text-align: left;
+}
+
+.useraddresslabel {
+  width: 120px;
+  margin-right: 76px;
+  padding-top: 8px;
+  float: right;
+  clear: none;
+  -webkit-transform: translate(95px, -20px);
+  -ms-transform: translate(95px, -20px);
+  transform: translate(95px, -20px);
+  color: #e7e7e7;
+  font-size: 14px;
+  text-align: left;
+  text-indent: 20px;
+  font-size: 12px;
+}
+
+.image {
+  position: absolute;
+  left: 42%;
+  top: 6.25%;
+  right: auto;
+  bottom: auto;
+  float: none;
+  clear: none;
+  background-color: #020202;
+}
