@@ -242,12 +242,14 @@ contract DefiHedge {
     	    underlying.transferFrom(msg.sender, address(this), bondContracts[offerKey].interest);
     	    
     	    bondContracts[offerKey].lockTime = now + bondContracts[offerKey].duration;
-            
-            bondContracts[offerKey].taker = msg.sender;
-            bondContracts[offerKey].state = 1;
+
             uint value = bondContracts[offerKey].interest.add(bondContracts[offerKey].base);
             
             mintCToken(bondContracts[offerKey].tokenAddress, bondContracts[offerKey].cTokenAddress, value, offerKey);
+            
+            bondContracts[offerKey].taker = msg.sender;
+    	    bondContracts[offerKey].state = 1;
+    	    emit Activated(offerKey);
 	    }
 	    
         if (bondContracts[offerKey].side == 1) {
@@ -256,12 +258,13 @@ contract DefiHedge {
     	    
     	    bondContracts[offerKey].lockTime = now + bondContracts[offerKey].duration;
     	    
-    	    bondContracts[offerKey].taker = msg.sender;
-    	    bondContracts[offerKey].state = 1;
-    	    
     	    value = bondContracts[offerKey].interest.add(bondContracts[offerKey].base);
             
             mintCToken(bondContracts[offerKey].tokenAddress, bondContracts[offerKey].cTokenAddress, value, offerKey);
+            
+            bondContracts[offerKey].taker = msg.sender;
+    	    bondContracts[offerKey].state = 1;
+    	    emit Activated(offerKey);
         }
 	}
 	
@@ -272,29 +275,29 @@ contract DefiHedge {
 	    if (bondContracts[offerKey].side == 0) {
     	    require(msg.value >= bondContracts[offerKey].interest);
     	    
-    	    bondContracts[offerKey].lockTime = now + bondContracts[offerKey].duration;
-    	    
-    	    bondContracts[offerKey].taker = msg.sender;
-    	    bondContracts[offerKey].state = 1;
-    	    
     	    uint value = bondContracts[offerKey].interest.add(bondContracts[offerKey].base);
             
             mintCEther(value, offerKey);
             
+            bondContracts[offerKey].lockTime = now + bondContracts[offerKey].duration;
+    	    
+    	    bondContracts[offerKey].taker = msg.sender;
+    	    bondContracts[offerKey].state = 1;
+    	    
             emit Activated(offerKey);
 	    }
 	    
 	    if (bondContracts[offerKey].side == 1) {
     	    require(msg.value >= bondContracts[offerKey].base);
     	    
-    	    bondContracts[offerKey].lockTime = now + bondContracts[offerKey].duration;
-    	    
-    	    bondContracts[offerKey].taker = msg.sender;
-    	    bondContracts[offerKey].state = 1;
-    	    
     	    value = bondContracts[offerKey].interest.add(bondContracts[offerKey].base);
             
             mintCEther(value, offerKey);
+            
+            bondContracts[offerKey].lockTime = now + bondContracts[offerKey].duration;
+    	    
+    	    bondContracts[offerKey].taker = msg.sender;
+    	    bondContracts[offerKey].state = 1;
             
             emit Activated(offerKey);
 	    }
@@ -305,17 +308,17 @@ contract DefiHedge {
 	public
 	{
 	    require(msg.sender == bondContracts[offerKey].maker);
-	    
+	    require(bondContracts[offerKey].state == 0)
 		emit Aborted(offerKey);
-		
-		bondContracts[offerKey].state = 0;
 		
 		/// Return funds to maker
 		if (bondContracts[offerKey].side == 1) {
 		bondContracts[offerKey].maker.transfer(bondContracts[offerKey].interest);    
+		bondContracts[offerKey].state = 2;
 		}
 		if (bondContracts[offerKey].side == 0) {
 		bondContracts[offerKey].maker.transfer(bondContracts[offerKey].base);    
+		bondContracts[offerKey].state = 2;
 		}
 	}
 	
@@ -324,9 +327,6 @@ contract DefiHedge {
 	public
 	{
 	    require(now > bondContracts[offerKey].lockTime);
-		emit termEnded(offerKey);
-
-		bondContracts[offerKey].state = 2;
         
     /// Redeem CEther & return funds to respective parties
 		
@@ -344,6 +344,8 @@ contract DefiHedge {
     		    redeemCEther((total.add(floatingReturned)));
     	        bondContracts[offerKey].maker.transfer(total);
     	        bondContracts[offerKey].taker.transfer(floatingReturned);
+    	        emit termEnded(offerKey);
+		        bondContracts[offerKey].state = 2;
     		    }
     		    
     		if (avgRate < bondContracts[offerKey].rate){
@@ -352,6 +354,8 @@ contract DefiHedge {
     		    redeemCEther((total.add(floatingReturned)));
     		    bondContracts[offerKey].maker.transfer(total);
     		    bondContracts[offerKey].taker.transfer(floatingReturned);
+    		    emit termEnded(offerKey);
+		        bondContracts[offerKey].state = 2;
     		    }
 		
 		}
@@ -364,6 +368,8 @@ contract DefiHedge {
     		    redeemCEther((total.add(floatingReturned)));
     	        bondContracts[offerKey].maker.transfer(floatingReturned);
     	        bondContracts[offerKey].taker.transfer(total);
+    	        emit termEnded(offerKey);
+		        bondContracts[offerKey].state = 2;
     		    }
     		    
     		if (avgRate < bondContracts[offerKey].rate){
@@ -372,6 +378,8 @@ contract DefiHedge {
     		    redeemCEther((total.add(floatingReturned)));
     		    bondContracts[offerKey].maker.transfer(floatingReturned);
     		    bondContracts[offerKey].taker.transfer(total);
+    		    emit termEnded(offerKey);
+		        bondContracts[offerKey].state = 2;
     		    }
 		
 		}
@@ -401,6 +409,8 @@ contract DefiHedge {
 		        redeemCToken(cTokenAddress,(total.add(floatingReturned)));
 		        underlying.transfer(bondContracts[offerKey].maker, total);
 		        underlying.transfer(bondContracts[offerKey].taker, floatingReturned);
+		        emit termEnded(offerKey);
+		        bondContracts[offerKey].state = 2;
 		    }
 		    
 		    if (avgRate < bondContracts[offerKey].rate){
@@ -409,6 +419,8 @@ contract DefiHedge {
 		        redeemCToken(cTokenAddress,(total.add(floatingReturned)));
 		        underlying.transfer(bondContracts[offerKey].maker, total);
 		        underlying.transfer(bondContracts[offerKey].taker, floatingReturned);
+		        emit termEnded(offerKey);
+		        bondContracts[offerKey].state = 2;
 		    }      
 		    
         }
@@ -421,6 +433,8 @@ contract DefiHedge {
 		        redeemCToken(cTokenAddress,(total.add(floatingReturned)));
 		        underlying.transfer(bondContracts[offerKey].maker, floatingReturned);
 		        underlying.transfer(bondContracts[offerKey].taker, total);
+		        emit termEnded(offerKey);
+		        bondContracts[offerKey].state = 2;
 		    }
 		    
 		    if (avgRate < bondContracts[offerKey].rate){
@@ -429,6 +443,8 @@ contract DefiHedge {
 		        redeemCToken(cTokenAddress,(total.add(floatingReturned)));
 		        underlying.transfer(bondContracts[offerKey].maker, floatingReturned);
 		        underlying.transfer(bondContracts[offerKey].taker, total);
+		        emit termEnded(offerKey);
+		        bondContracts[offerKey].state = 2;
 		    }      
         }
 	}
