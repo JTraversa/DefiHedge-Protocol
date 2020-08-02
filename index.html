@@ -33,7 +33,7 @@
             <form id="wf-form-inputForm" name="wf-form-inputForm" data-name="inputForm" class="form">
     <input type="text" class="rate-field w-input" maxlength="256" name="Rate" data-name="Rate" placeholder="e.g. 5, 10, etc.," id="Rate" required="">
     <input type="text" class="text-field w-input" maxlength="256" name="Duration" data-name="Duration" placeholder="Duration (sec)" id="Duration" required="">
-    <input type="text" class="token-field w-input" maxlength="256" name="Token" data-name="Token" placeholder="Comp DAI" id="Token" disabled=true>
+    <input type="text" class="token-field w-input" maxlength="256" name="Token" data-name="Token" placeholder="e.g. USDC" id="Token" disabled=true>
     <input type="text" class="supplied-field w-input" maxlength="256" name="Supplied" data-name="Supplied" placeholder="# of Tokens" id="Supplied">
     </form>
             <div class="w-form-done">
@@ -988,7 +988,12 @@ function removeDuplicates(originalArray, prop) {
 /// Set token type to ERC or ETH
 function settype(type) {
 window.tokentype = type;
-document.getElementById("Token").placeholder = type;
+if (type == "ETH") {
+	document.getElementById("Token").placeholder = type;
+	}
+if (type == "ERC") {
+	document.getElementById("Token").placeholder = 'DAI';
+	}
 }
 /// take offer for either ERC or ETH
 
