@@ -105,7 +105,7 @@
         <div class="contractexpire3" id="contractexpire3">01/01/2001 7:00:01 PM</div>
       </div>
 	  <div class="pocText">
-	  This is our initial On-Chain PoC available on Ropsten
+	  This is our initial On-Chain PoC, available on Ropsten
 	  </div>
     </div>
   </div>
@@ -1698,7 +1698,7 @@ tokencontract.approve(currentcontractaddress, '1000000000000000000000000000000',
 /// check for metamask address changes
 var account = web3.eth.accounts[0];
 var accountInterval = setInterval(function() {
-if (web3.eth.chainId == 3) {
+if (window.ethereum.chainId == "0x3") {
 	if (web3.eth.accounts[0] !== account) {
 		account = web3.eth.accounts[0];
 		document.getElementById("useraddress").innerHTML = account;
