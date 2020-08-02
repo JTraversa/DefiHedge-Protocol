@@ -1700,10 +1700,10 @@ if (web3.eth.chainId == "0x3") {
 		account = web3.eth.accounts[0];
 		document.getElementById("useraddress").innerHTML = account;
 	  }
-	}, 100);
+	};
 else {
 document.getElementById("useraddress").innerHTML = "Wrong Ethereum Network";
-}
+}, 100)
     </script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 </body>
