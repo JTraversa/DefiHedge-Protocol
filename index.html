@@ -988,9 +988,7 @@ function removeDuplicates(originalArray, prop) {
 /// Set token type to ERC or ETH
 function settype(type) {
 window.tokentype = type;
-document.getElementById("Token").innerHTML.placeholder = type;
-console.log(type);
-console.log(document.getElementById("Token").innerHTML.placeholder);
+document.getElementById("Token").placeholder = type;
 }
 /// take offer for either ERC or ETH
 
