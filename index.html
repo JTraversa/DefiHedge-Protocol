@@ -1070,8 +1070,7 @@ lendEthContract.bondRelease({
   value: "",   
   data: "" },  function(error, result){
     if(!error)
-		tx = (JSON.stringify(result)).replace('"',"")
-		document.getElementById("txstatus1").innerHTML = 'Tx:' + tx;
+		document.getElementById("txstatus1").innerHTML = 'Tx:' + (JSON.stringify(result)).replace('"',"");
     else
         console.error(error);
 })
@@ -1089,8 +1088,7 @@ lendEthContract.bondRelease({
   value: "",   
   data: "" },  function(error, result){
     if(!error)
-		tx = (JSON.stringify(result)).replace('"',"")
-		document.getElementById("txstatus1").innerHTML = 'Tx:' + tx;
+		document.getElementById("txstatus1").innerHTML = 'Tx:' + (JSON.stringify(result)).replace('"',"");
     else
         console.error(error);
 })
@@ -1111,8 +1109,7 @@ lendEthContract.takeOffer({
   value: currentstake,   
   data: "" },  function(error, result){
     if(!error)
-		tx = (JSON.stringify(result)).replace('"',"")
-		document.getElementById("txstatus1").innerHTML = 'Tx:' + tx;
+		document.getElementById("txstatus1").innerHTML = 'Tx:' + (JSON.stringify(result)).replace('"',"");
     else
         console.error(error);
 })
@@ -1131,8 +1128,7 @@ lendErcContract.takeOffer({
   value: "",   
   data: "" },  function(error, result){
     if(!error)
-		tx = (JSON.stringify(result)).replace('"',"")
-		document.getElementById("txstatus1").innerHTML = 'Tx:' + tx;
+		document.getElementById("txstatus1").innerHTML = 'Tx:' + (JSON.stringify(result)).replace('"',"");
     else
         console.error(error);
 })
@@ -1154,8 +1150,7 @@ offerContract.newEthContract(rate,duration,{
   value: supplied,   
   data: "" },  function(error, result){
     if(!error)
-		tx = (JSON.stringify(result)).replace('"',"")
-		document.getElementById("txstatus1").innerHTML = 'Tx:' + tx;
+		document.getElementById("txstatus1").innerHTML = 'Tx:' + (JSON.stringify(result)).replace('"',"");
     else
         console.error(error);
 })
@@ -1177,8 +1172,7 @@ offerContract.newErc20Contract(rate,duration, erc20address, cerc20address, suppl
   value: "",   
   data: "" },  function(error, result){
     if(!error)
-		tx = (JSON.stringify(result)).replace('"',"")
-		document.getElementById("txstatus1").innerHTML = 'Tx:' + tx;
+		document.getElementById("txstatus1").innerHTML = 'Tx:' + (JSON.stringify(result)).replace('"',"");
     else
         console.error(error);
 })
