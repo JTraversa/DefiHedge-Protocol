@@ -21,7 +21,7 @@
       <div class="bannerblock w-clearfix">
         <div class="useraddress" id="useraddress">0x-------------------------</div>
 		<div class="txstatus1" id="txstatus1">Tx:</div>
-		<a href ="#" id = "txstatus1" class="txstatus1" type="button" onclick="linkTransaction()"><div class="txstatus1" id="txstatus1">Tx:</div></a>
+		<a href ="#" id = "txHash" class="txHash" type="button" onclick="linkTransaction()"><div class="txstatus1" id="txstatus1">Tx:</div></a>
 		<div class="useraddresslabel">User Address:</div>
       </div>
       <div class="columns w-row">
@@ -1699,7 +1699,7 @@ tokencontract.approve(currentcontractaddress, '1000000000000000000000000000000',
 
 /// link txid
 function linkTransaction() {
-	txid = document.getElementById('txHash').innerText.split(":");
+	txid = document.getElementById('txstatus1').innerText.split(":");
 	url = "https://ropsten.etherscan.io/tx/".concat(txid[1]);
 	window.open(url);
 }
