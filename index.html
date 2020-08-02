@@ -1699,7 +1699,8 @@ tokencontract.approve(currentcontractaddress, '1000000000000000000000000000000',
 /// link txid
 function linkTransaction() {
 	txid = document.getElementById('txstatus1').innerText.split(":");
-	url = "https://ropsten.etherscan.io/tx/".concat(txid[1]);
+	txidfix = txid[1].replace('"',"");
+	url = "https://ropsten.etherscan.io/tx/".concat(txidfix);
 	window.open(url);
 }
 
