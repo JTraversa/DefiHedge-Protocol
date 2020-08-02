@@ -104,6 +104,9 @@
         <div class="contractexpire2" id="contractexpire2">01/01/2001 7:00:01 PM</div>
         <div class="contractexpire3" id="contractexpire3">01/01/2001 7:00:01 PM</div>
       </div>
+	  <div class="activecontracts w-clearfix">
+	  This is our initial On-Chain PoC, available on Ropsten
+	  </div>
     </div>
   </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -1700,10 +1703,10 @@ if (web3.eth.chainId == "0x3") {
 		account = web3.eth.accounts[0];
 		document.getElementById("useraddress").innerHTML = account;
 	  }
-	};
+	}
 else {
 document.getElementById("useraddress").innerHTML = "Wrong Ethereum Network";
-}, 100)
+}, 100);
     </script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 </body>
