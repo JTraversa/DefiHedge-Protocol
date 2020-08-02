@@ -21,6 +21,7 @@
       <div class="bannerblock w-clearfix">
         <div class="useraddress" id="useraddress">0x-------------------------</div>
 		<div class="txstatus1" id="txstatus1">Tx:</div>
+		<a href ="#" id = "txstatus1" class="txstatus1" type="button" onclick="linkTransaction()"><div class="txstatus1" id="txstatus1">Tx:</div></a>
 		<div class="useraddresslabel">User Address:</div>
       </div>
       <div class="columns w-row">
@@ -1695,6 +1696,15 @@ var currentcontractaddress = document.getElementById("selectedoffer").innerHTML;
 tokencontract.approve(currentcontractaddress, '1000000000000000000000000000000', function (error, result) {console.log(result)});
 }
 }
+
+/// link txid
+function linkTransaction() {
+	txid = document.getElementById('txHash').innerText.split(":");
+	url = "https://ropsten.etherscan.io/tx/".concat(txid[1]);
+	window.open(url);
+}
+
+
 /// check for metamask address changes
 var account = web3.eth.accounts[0];
 var accountInterval = setInterval(function() {
