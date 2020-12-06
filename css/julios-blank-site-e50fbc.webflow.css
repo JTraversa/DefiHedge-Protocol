@@ -17,20 +17,6 @@ body {
   line-height: 20px;
 }
 
-.pocText {
-	margin-top: 10px;
-	color: #FFFFFF;
-	margin-left:42.5%;
-	transform: translate(0px,-350px);
-}
-.pocText2 {
-	margin-top: 10px;
-	margin-left:45%;
-	margin-right:auto;
-	color: #FFFFFF;
-	transform: translate(-280px,-350px);
-}
-
 
 .container {
   height: 1222px;
@@ -489,11 +475,21 @@ body {
   border: 3px solid #6a686d;
   border-radius: 20px;
   background-color: #28292e;
-  -webkit-transform: translate(650px, -350px);
-  -ms-transform: translate(650px, -350px);
-  transform: translate(650px, -350px);
+  transform: translate(0px,-350px);
+  margin-left:30%;
 }
-
+.pocText {
+	margin-top: 10px;
+	color: #FFFFFF;
+	margin-left:42.5%;
+	transform: translate(0px,-350px);
+}
+.pocText2 {
+	margin-left:45%;
+	margin-right:auto;
+	color: #FFFFFF;
+	transform: translate(-280px,-350px);
+}
 .offer1 {
   height: 5px;
   margin-top: -3px;
