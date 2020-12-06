@@ -20,10 +20,17 @@ body {
 .pocText {
 	margin-top: 10px;
 	color: #FFFFFF;
-	text-align: center;
-	max-width: 1000px;
-	transform: translate(350px,0px);
+	margin-left:42.5%;
+	transform: translate(0px,-350px);
 }
+.pocText2 {
+	margin-top: 10px;
+	margin-left:45%;
+	margin-right:auto;
+	color: #FFFFFF;
+	transform: translate(-280px,-350px);
+}
+
 
 .container {
   height: 1222px;
@@ -31,6 +38,7 @@ body {
 }
 
 .columns {
+  margin-top:-40px;
   float: none;
 }
 
@@ -58,7 +66,7 @@ body {
 .offerdiv {
   height: 340px;
   margin-top: 22px;
-  margin-right: -6px;
+  margin-right: -12px;
   margin-left: -6px;
   border: 5px solid #6a686d;
   border-radius: 20px;
@@ -169,6 +177,9 @@ body {
 
 .takecolumn {
   height: 525px;
+  -webkit-transform: translate(8px, 0px);
+  -ms-transform: translate(8px, 0px);
+  transform: translate(8px, 0px);
   margin-top: 133px;
   padding-right: 10px;
   border: 5px solid #6a686d;
@@ -478,9 +489,9 @@ body {
   border: 3px solid #6a686d;
   border-radius: 20px;
   background-color: #28292e;
-  -webkit-transform: translate(71px, 10px);
-  -ms-transform: translate(71px, 10px);
-  transform: translate(71px, 10px);
+  -webkit-transform: translate(650px, -350px);
+  -ms-transform: translate(650px, -350px);
+  transform: translate(650px, -350px);
 }
 
 .offer1 {
@@ -763,11 +774,10 @@ body {
 }
 
 .image {
-  position: absolute;
-  left: 42%;
-  top: 6.25%;
-  right: auto;
-  bottom: auto;
+  margin:auto;
+  position: relative;
+  transform: translate(0px, 50px);
+  right: -35%;
   float: none;
   clear: none;
   background-color: #020202;

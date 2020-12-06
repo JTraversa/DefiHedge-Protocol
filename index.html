@@ -23,6 +23,9 @@
 		<a href ="#" id = "txHash" class="txHash" type="button" onclick="linkTransaction()"><div class="txstatus1" id="txstatus1">Tx:</div></a>
 		<div class="useraddresslabel">User Address:</div>
       </div>
+	  <div>
+	  <img src="images/logo.png" width="308" alt="" class="image">
+	  </div
       <div class="columns w-row">
         <div class="createcolumn w-col w-col-4 w-col-small-small-stack"><a href="#" data-w-id="75edf02e-6359-ab95-ec3e-c88d6cc5cd95" type="button" onclick="settype(this.innerHTML)" class="ercbutton w-button" id="ETH">ETH</a><a href="#" data-w-id="5870a97d-3094-8531-0793-9982b645efd9" type="button" onclick="settype(this.innerHTML)" class="ercbutton w-button" id="ERC">ERC</a>
           <div class="ratetext">Rate:</div>
@@ -85,7 +88,7 @@
             <div class="contractsupplied" id="contractsupplied"><br>‍</div>
           </div><a href="#" class="authorizebutton2 w-button" type="button" id= "authorizebutton2" onclick="ercAuthorize('TAKE')">Authorize Token</a>
 		  <a data-w-id="01516053-af32-daae-a25d-18c9f4294142" href="#" class="takeofferbutton w-button" id="takeofferbutton" type="button" onclick="takeoffer()">Take Offer</a></div>
-      </div><img src="images/LightDefi.png" width="308" alt="" class="image">
+      </div>
       <div class="activecontracts w-clearfix">
         <div class="contractslabel">Active Contracts:</div>
         <div class="contract1" id="contract1">0x-------------------------</div>
@@ -105,7 +108,22 @@
         <div class="contractexpire3" id="contractexpire3">01/01/2001 7:00:01 PM</div>
       </div>
 	  <div class="pocText">
-	  On-Chain PoC, deployed on Ropsten
+	  Local On-Chain PoC, Deployed on Ropsten
+	  </div>
+	  <div class="pocText2">
+	  1. Chose Eth or Dai and approve Dai if necessary (Get custom Compound Dai from Compound testnet faucet)
+	  </div>
+	  <div class="pocText2">
+	  2. Place a fixed-side order at a chosen rate and maturity.
+	  </div>
+	  <div class="pocText2">
+	  3. After confirmation, (or if an order already exists) select the order from the order list.
+	  </div>
+	  <div class="pocText2">
+	  4. After inspecting it's parameters, "take" the order, in the process backing the fixed-rate with 100% like-kind collateral.
+	  </div>
+	  <div class="pocText2">
+	  5. Once the agreement reaches maturity release the timelock, returning the fixed-yield to one party and remaining interest to another.
 	  </div>
     </div>
   </div>
