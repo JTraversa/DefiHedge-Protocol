@@ -1,6 +1,6 @@
 # Swivel Finance
 
-<img src="https://imgur.com/gSoYJEB">
+<img src="https://swivel.finance/static/media/logo.679b2bf7.png">
 
  The Decentralized Marketplace for Fixed-Rate Lending & Interest Rate Swaps
  (Previously Defihedge)
