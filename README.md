@@ -1,8 +1,9 @@
-# DefiHedge
+# Swivel Finance
 
-<img src="https://nescience.io/wp-content/uploads/2020/03/Light-Defi.png" width="300" height="200">
+<img src="https://imgur.com/gallery/gSoYJEB">
 
  The Decentralized Marketplace for Fixed-Rate Lending & Interest Rate Swaps
+ (Previously Defihedge)
  
  Run locally:
  
