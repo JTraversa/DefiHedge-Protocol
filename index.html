@@ -27,7 +27,7 @@
 	  <img src="images/logo.png" width="308" alt="" class="image">
 	  </div
       <div class="columns w-row">
-        <div class="createcolumn w-col w-col-4 w-col-small-small-stack"><a href="#" data-w-id="75edf02e-6359-ab95-ec3e-c88d6cc5cd95" type="button" onclick="settype(this.innerHTML)" class="ercbutton w-button" id="ETH">ETH</a><a href="#" data-w-id="5870a97d-3094-8531-0793-9982b645efd9" type="button" onclick="settype(this.innerHTML)" class="ercbutton w-button" id="ERC">ERC</a>
+        <div class="createcolumn w-col w-col-4 w-col-small-small-stack"><a href="#" data-w-id="75edf02e-6359-ab95-ec3e-c88d6cc5cd95" type="button" onclick="settype(this.innerHTML)" class="ercbutton w-button" id="ETH">ETH</a><a href="#" data-w-id="5870a97d-3094-8531-0793-9982b645efd9" type="button" onclick="settype(this.innerHTML)" class="ercbutton w-button" id="ERC">DAI</a>
           <div class="ratetext">Rate:</div>
           <div class="durationtext">Duration:</div>
           <div class="tokentext">Token:</div>
@@ -1089,7 +1089,6 @@ var address = window.lockedContracts[(buttonnumber-1)].contractAddress;
 var lendEthContract = web3.eth.contract(ethcontractABI).at(address);
 var currentaddress = document.getElementById("useraddress").innerHTML;
 lendEthContract.bondRelease({  
-  from: currentaddress,   
   gas: "200000",   
   value: "",   
   data: "" },  function(error, result){
@@ -1107,7 +1106,6 @@ var address = window.lockedContracts[(buttonnumber-1)].contractAddress;
 var lendErcContract = web3.eth.contract(ercContractABI).at();
 var currentaddress = document.getElementById("useraddress").innerHTML;
 lendEthContract.bondRelease({  
-  from: currentaddress,   
   gas: "350000",   
   value: "",   
   data: "" },  function(error, result){
@@ -1128,7 +1126,6 @@ var lendEthContract = web3.eth.contract(ethcontractABI).at(address);
 var currentaddress = document.getElementById("useraddress").innerHTML;
 var currentstake = Math.ceil(window.currentcontractstake);
 lendEthContract.takeOffer({  
-  from: currentaddress,   
   gas: "200000",   
   value: currentstake,   
   data: "" },  function(error, result){
@@ -1147,7 +1144,6 @@ var lendErcContract = web3.eth.contract(ercContractABI).at(address);
 var currentaddress = document.getElementById("useraddress").innerHTML;
 var currentstake = Math.ceil(window.currentcontractstake);
 lendErcContract.takeOffer({  
-  from: currentaddress,   
   gas: "350000",   
   value: "",   
   data: "" },  function(error, result){
@@ -1168,8 +1164,7 @@ var currentaddress = document.getElementById("useraddress").value;
 var rate = document.getElementById("Rate").value;
 var duration = document.getElementById("Duration").value;
 var supplied = (Number(document.getElementById("Supplied").value)*1000000000000000000);
-offerContract.newEthContract(rate,duration,{  
-  from: currentaddress,   
+offerContract.newEthContract(rate,duration,{ 
   gas: "700000",   
   value: supplied,   
   data: "" },  function(error, result){
@@ -1191,7 +1186,6 @@ var supplied = ((document.getElementById("Supplied").value)*1000000000000000000)
 var cerc20address= '0xdb5ed4605c11822811a39f94314fdb8f0fb59a2c'
 var erc20address = '0xc2118d4d90b274016cb7a54c03ef52e6c537d957';
 offerContract.newErc20Contract(rate,duration, erc20address, cerc20address, supplied, {  
-  from: currentaddress,   
   gas: "900000",   
   value: "",   
   data: "" },  function(error, result){
@@ -1208,6 +1202,7 @@ var address = watchedaddress;
 var lendEthContract = web3.eth.contract(ethcontractABI).at(address);
 lendEthContract.termEnded().watch ( (err, response) => {
 		var resp = response.args;
+		document.getElementById("useraddress").innerHTML = "upgrade";
 		var index  = window.lockedContracts.findIndex(x => x.contractAddress === address);
 		if (window.lockedContracts[index].contractAddress == address) {
 		window.lockedContracts.splice(index, 1);
@@ -1278,7 +1273,7 @@ lendEthContract.termEnded().watch ( (err, response) => {
 		document.getElementById("contractexpire3").innerHTML = convertedTime.toLocaleString();
 		}
 		catch (e) {document.getElementById("contractexpire3").innerHTML = "01/01/2001 7:00:01 PM";}
-		document.getElementById("useraddress").innerHTML = "tail tape upgrade";
+		document.getElementById("useraddress").innerHTML = "upgrade";
 		});
 		}
 		
@@ -1288,6 +1283,7 @@ var address = watchedaddress;
 var lendErcContract = web3.eth.contract(ercContractABI).at(address);
 lendErcContract.termEnded().watch ( (err, response) => {
 		var resp = response.args;
+		document.getElementById("useraddress").innerHTML = "upgrade";
 		var index  = window.lockedContracts.findIndex(x => x.contractAddress === address);
 		if (window.lockedContracts[index].contractAddress == address) {
 		window.lockedContracts.splice(index, 1);
@@ -1358,7 +1354,6 @@ lendErcContract.termEnded().watch ( (err, response) => {
 		document.getElementById("contractexpire3").innerHTML = convertedTime.toLocaleString();
 		}
 		catch (e) {document.getElementById("contractexpire3").innerHTML = "01/01/2001 7:00:01 PM";}
-		document.getElementById("useraddress").innerHTML = "tail tape upgrade";
 		});
 		}
 		
@@ -1428,6 +1423,7 @@ var address = watchedaddress;
 var lendEthContract = web3.eth.contract(ethcontractABI).at(address);
 lendEthContract.OfferConfirmed().watch ( (err, response) => {
 		window.recentethcontract = response.args;
+		document.getElementById("useraddress").innerHTML = "tape";
 		var index = lockedContracts.findIndex(x => x.contractAddress==window.recentethcontract.contractAddress)
 
 	    if (index === -1){
@@ -1520,6 +1516,7 @@ var address = watchedaddress;
 var lendErcContract = web3.eth.contract(ercContractABI).at(address);
 lendErcContract.OfferConfirmed().watch ( (err, response) => {
 		window.recenterccontract = response.args;
+		document.getElementById("useraddress").innerHTML = "tape";
 		var index = lockedContracts.findIndex(x => x.contractAddress==window.recenterccontract.contractAddress)
 
 	    if (index === -1){
@@ -1643,6 +1640,7 @@ offerContract.newLendEthContract().watch ( (err, response) => {
 		catch (e) {}
 		try {document.getElementById("active8").innerHTML = activeContracts[7].contractAddress;}
 		catch (e) {}
+		document.getElementById("useraddress").innerHTML = "tail";
 		});
 
 ///listen for Erc contracts
@@ -1673,6 +1671,7 @@ offerContract.newLendErcContract().watch ( (err, response) => {
 		catch (e) {}
 		try {document.getElementById("active8").innerHTML = activeContracts[7].contractAddress;}
 		catch (e) {}
+		document.getElementById("useraddress").innerHTML = "tail";
 		});
 
 /// load offer when address is selected
