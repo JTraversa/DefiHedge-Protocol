@@ -1202,7 +1202,6 @@ var address = watchedaddress;
 var lendEthContract = web3.eth.contract(ethcontractABI).at(address);
 lendEthContract.termEnded().watch ( (err, response) => {
 		var resp = response.args;
-		document.getElementById("useraddress").innerHTML = "upgrade";
 		var index  = window.lockedContracts.findIndex(x => x.contractAddress === address);
 		if (window.lockedContracts[index].contractAddress == address) {
 		window.lockedContracts.splice(index, 1);
@@ -1273,7 +1272,6 @@ lendEthContract.termEnded().watch ( (err, response) => {
 		document.getElementById("contractexpire3").innerHTML = convertedTime.toLocaleString();
 		}
 		catch (e) {document.getElementById("contractexpire3").innerHTML = "01/01/2001 7:00:01 PM";}
-		document.getElementById("useraddress").innerHTML = "upgrade";
 		});
 		}
 		
@@ -1283,7 +1281,6 @@ var address = watchedaddress;
 var lendErcContract = web3.eth.contract(ercContractABI).at(address);
 lendErcContract.termEnded().watch ( (err, response) => {
 		var resp = response.args;
-		document.getElementById("useraddress").innerHTML = "upgrade";
 		var index  = window.lockedContracts.findIndex(x => x.contractAddress === address);
 		if (window.lockedContracts[index].contractAddress == address) {
 		window.lockedContracts.splice(index, 1);
@@ -1423,7 +1420,6 @@ var address = watchedaddress;
 var lendEthContract = web3.eth.contract(ethcontractABI).at(address);
 lendEthContract.OfferConfirmed().watch ( (err, response) => {
 		window.recentethcontract = response.args;
-		document.getElementById("useraddress").innerHTML = "tape";
 		var index = lockedContracts.findIndex(x => x.contractAddress==window.recentethcontract.contractAddress)
 
 	    if (index === -1){
@@ -1516,7 +1512,6 @@ var address = watchedaddress;
 var lendErcContract = web3.eth.contract(ercContractABI).at(address);
 lendErcContract.OfferConfirmed().watch ( (err, response) => {
 		window.recenterccontract = response.args;
-		document.getElementById("useraddress").innerHTML = "tape";
 		var index = lockedContracts.findIndex(x => x.contractAddress==window.recenterccontract.contractAddress)
 
 	    if (index === -1){
@@ -1640,7 +1635,6 @@ offerContract.newLendEthContract().watch ( (err, response) => {
 		catch (e) {}
 		try {document.getElementById("active8").innerHTML = activeContracts[7].contractAddress;}
 		catch (e) {}
-		document.getElementById("useraddress").innerHTML = "tail";
 		});
 
 ///listen for Erc contracts
@@ -1671,7 +1665,6 @@ offerContract.newLendErcContract().watch ( (err, response) => {
 		catch (e) {}
 		try {document.getElementById("active8").innerHTML = activeContracts[7].contractAddress;}
 		catch (e) {}
-		document.getElementById("useraddress").innerHTML = "tail";
 		});
 
 /// load offer when address is selected
